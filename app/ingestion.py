@@ -5,10 +5,10 @@ from pypdf import PdfReader #to read the uploaded pdf
 
 def extract_text(filename: str, file_bytes: bytes):
     if filename.lower().endswith(".pdf"):
-        #io.BytesIO wraps the bytes wraps the bytes into a file like object so PdfReader can work with it
+        #io.BytesIO wraps the bytes into a file like object so PdfReader can work with it
         reader = PdfReader(io.BytesIO(file_bytes))
         #extract text from everypage
-        #some pdf readers have no extractable text, "" stops that from crashing the program
+        #some pdf pages have no extractable text, "" stops that from crashing the program
         return "\n".join(page.extract_text() or "" for page in reader.pages)
     
     #decode bytes as utf-8
