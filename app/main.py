@@ -5,8 +5,18 @@ from fastapi import FastAPI, UploadFile, File
 from ingestion import extract_text, chunk_text
 from vectorstore import add_chunks, search_chunks
 from rag import generate_answer
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title = "Document Intelligence API")
+
+# Add CORS middleware to allow frontend requests
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change to specific origins in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class QueryRequest(BaseModel):
     question: str 
