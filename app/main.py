@@ -12,7 +12,7 @@ app = FastAPI(title = "Document Intelligence API")
 # Add CORS middleware to allow frontend requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change to specific origins in production
+    allow_origins=["*"],  #  fine for local dev; restrict to your real origin in prod env
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
