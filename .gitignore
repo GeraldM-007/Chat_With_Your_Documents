@@ -2,7 +2,7 @@
 venv/
 .env
 test/
-
+data/
 #ignore python cache
 __pycache__/
 *.pyc
