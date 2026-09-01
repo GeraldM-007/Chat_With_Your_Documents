@@ -43,7 +43,7 @@ def generate_answer(question: str, search_results: dict):
     
     prompt = build_prompt(question, chunks, metadatas)
     response = client.chat.completions.create(
-        model = "moonshotai/kimi-k2-instruct",
+        model = "openai/gpt-oss-120b",
         max_tokens = 500,
         messages = [{"role": "user", "content": prompt}]
     )
