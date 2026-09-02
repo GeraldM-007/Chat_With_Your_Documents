@@ -7,7 +7,7 @@ from vectorstore import add_chunks, search_chunks
 from rag import generate_answer
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title = "Document Intelligence API")
+app = FastAPI(title = "Chat_With_Your_Documents_API")
 
 # Add CORS middleware to allow frontend requests
 app.add_middleware(
